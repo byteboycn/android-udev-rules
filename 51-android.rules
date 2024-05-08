@@ -302,33 +302,33 @@ ATTR{idProduct}=="0c99", GOTO="adb"
 #   Desire HD (0ca2=debug 0ff8=tether 0ff9=charge 0ffe=modem)
 ATTR{idProduct}=="0ca2", GOTO="adb"
 #   Desire S (Saga), Desire HD, Hero, Thunderbolt (0cab=syncmode 0ff9=charge)
-ATTR{idProduct}=="0cab", SYMLINK+="android_adb"
+ATTR{idProduct}=="0cab", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Desire Z
 ATTR{idProduct}=="0c91", GOTO="adbfast"
 #   Evo Shift 4G (0c8d=debug 0ca5=?)
 ATTR{idProduct}=="0c8d", GOTO="adb"
-ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
+ATTR{idProduct}=="0ca5", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Hero (GSM), Desire
-ATTR{idProduct}=="0c99", SYMLINK+="android_adb"
+ATTR{idProduct}=="0c99", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Hero (CDMA)
-ATTR{idProduct}=="0c9a", SYMLINK+="android_adb"
+ATTR{idProduct}=="0c9a", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Incredible
-ATTR{idProduct}=="0c9e", SYMLINK+="android_adb"
+ATTR{idProduct}=="0c9e", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Incredible rev 0002
-ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
+ATTR{idProduct}=="0c8d", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   MyTouch 4G
-ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
+ATTR{idProduct}=="0c96", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   One (m7) && One (m8)
-ATTR{idProduct}=="0c93", SYMLINK+="android_adb"
+ATTR{idProduct}=="0c93", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Sensation, One (0f87=mtp,?,adb)
 ATTR{idProduct}=="0f87", GOTO="adbmtp"
-ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot", ENV{android_detected}="yes"
 #   One X
-ATTR{idProduct}=="0cd6", SYMLINK+="android_adb"
+ATTR{idProduct}=="0cd6", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Slide
-ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
+ATTR{idProduct}=="0e03", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Vision
-ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
+ATTR{idProduct}=="0c91", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Wildfire
 ATTR{idProduct}=="0c8b", GOTO="adbfast"
 #   Wildfire S
@@ -374,21 +374,21 @@ ATTR{idProduct}=="1038", GOTO="adbfast"
 #   U8850 Vision
 ATTR{idProduct}=="1021", GOTO="adbfast"
 #   HiKey (1050=usbnet 1057=adb)
-ATTR{idProduct}=="1050", SYMLINK+="android_adb"
+ATTR{idProduct}=="1050", SYMLINK+="android_adb", ENV{android_detected}="yes"
 ATTR{idProduct}=="1057", GOTO="adb"
 #   Honor 6
-ATTR{idProduct}=="103a", SYMLINK+="android_adb"
+ATTR{idProduct}=="103a", SYMLINK+="android_adb", ENV{android_detected}="yes"
 ATTR{idProduct}=="1051", GOTO="mtp"
 #   MediaPad M2-A01L
 ATTR{idProduct}=="1052", GOTO="mtp"
 #   MediaPad T3
-ATTR{idProduct}=="107d", SYMLINK+="android_adb"
+ATTR{idProduct}=="107d", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   P10 Lite
-ATTR{idProduct}=="107e", SYMLINK+="android_adb"
+ATTR{idProduct}=="107e", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Watch
-ATTR{idProduct}=="1c2c", SYMLINK+="android_adb"
+ATTR{idProduct}=="1c2c", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Mate 9
-ATTR{idProduct}=="107e", SYMLINK+="android_adb"
+ATTR{idProduct}=="107e", SYMLINK+="android_adb", ENV{android_detected}="yes"
 GOTO="android_usb_rules_end"
 LABEL="not_Huawei"
 
@@ -444,11 +444,11 @@ ATTR{idVendor}!="1004", GOTO="not_LG"
 ATTR{idProduct}=="618e", GOTO="adb"
 ATTR{idProduct}=="618f", GOTO="mass"
 #   G2 D802 (61f1=LG software mode)
-ATTR{idProduct}=="61f1", SYMLINK+="android_adb"
+ATTR{idProduct}=="61f1", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   G2 D803
-ATTR{idProduct}=="618c", SYMLINK+="android_adb"
+ATTR{idProduct}=="618c", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   G2 D803 rogers (631f=charge)
-ATTR{idProduct}=="631f", SYMLINK+="android_adb"
+ATTR{idProduct}=="631f", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   G3 (VS985), Android Phone (627f=mtp)
 ATTR{idProduct}=="627f", GOTO="mtp"
 #   LM-X420xxx/G2/Optimus (6300=charge 631c=charge 631d=ptp 631e=ptp 633e=mtp 6344=tether 6348=midi 6356=CDrom)
@@ -459,14 +459,14 @@ ATTR{idProduct}=="633e", GOTO="mtp"
 ATTR{idProduct}=="6344", GOTO="rndis"
 ATTR{idProduct}=="6348", GOTO="midi"
 #   Optimus LTE (61f9=mtp 61fe=tether)
-ATTR{idProduct}=="6315", SYMLINK+="android_adb"
+ATTR{idProduct}=="6315", SYMLINK+="android_adb", ENV{android_detected}="yes"
 ATTR{idProduct}=="61f9", GOTO="mtp"
 #   Swift GT540
-ATTR{idProduct}=="61b4", SYMLINK+="android_adb"
+ATTR{idProduct}=="61b4", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   P500 CM10
-ATTR{idProduct}=="61a6", SYMLINK+="android_adb"
+ATTR{idProduct}=="61a6", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   L90 D410, Various (6300=charge)
-ATTR{idProduct}=="6300", SYMLINK+="android_adb"
+ATTR{idProduct}=="6300", SYMLINK+="android_adb", ENV{android_detected}="yes"
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_LG"
@@ -503,11 +503,11 @@ LABEL="not_Microsoft"
 # Motorola
 ATTR{idVendor}!="22b8", GOTO="not_Motorola"
 #   CLIQ XT/Quench
-ATTR{idProduct}=="2d66", SYMLINK+="android_adb"
+ATTR{idProduct}=="2d66", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Defy/MB525
-ATTR{idProduct}=="428c", SYMLINK+="android_adb"
+ATTR{idProduct}=="428c", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Droid
-ATTR{idProduct}=="41db", SYMLINK+="android_adb"
+ATTR{idProduct}=="41db", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Razr XT912
 ATTR{idProduct}=="4362", GOTO="adbfast"
 #   Droid Turbo 2
@@ -575,13 +575,13 @@ ATTR{idVendor}=="0409", ATTR{idProduct}=="0300", GOTO="user"
 ATTR{idVendor}!="0955", GOTO="not_Nvidia"
 #   Audi SDIS Rear Seat Entertainment Tablet
 #   Folio
-ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="7000", SYMLINK+="android_fastboot", ENV{android_detected}="yes"
 ATTR{idProduct}=="7100", GOTO="user"
 #   SHIELD Tablet (cf05=mtp,adb cf06= cf07=mtp cf08= cf09=)
 ATTR{idProduct}=="cf05", GOTO="adbmtp"
 ATTR{idProduct}=="cf09", GOTO="adb"
 #   Shield TV (b42a=mtp)
-ATTR{idProduct}=="b442", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="b442", SYMLINK+="android_fastboot", ENV{android_detected}="yes"
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Nvidia"
@@ -682,23 +682,23 @@ LABEL="not_Polar"
 # Qualcomm (Wearners also 05c6)
 ATTR{idVendor}!="05c6", GOTO="not_Qualcomm"
 #   Geeksphone Zero
-ATTR{idProduct}=="9025", SYMLINK+="android_adb"
+ATTR{idProduct}=="9025", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   OnePlus One (6765=mtp,adb 6764=mtp)
 ATTR{idProduct}=="6765", GOTO="adbmtp"
 #   OnePlus Two
-ATTR{idProduct}=="9011", SYMLINK+="android_adb"
+ATTR{idProduct}=="9011", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   OnePlus 3
-ATTR{idProduct}=="900e", SYMLINK+="android_adb"
+ATTR{idProduct}=="900e", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   OnePlus 3T
-ATTR{idProduct}=="676c", SYMLINK+="android_adb"
+ATTR{idProduct}=="676c", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Snapdragon, OnePlus 3T w/ Oreo MIDI mode (9011=mtp 90bb=midi,adb 904e=ptp)
 #   Xiaomi A1 (90bb=midi,adb)
 ATTR{idProduct}=="90bb", GOTO="adbmidi"
 ATTR{idProduct}=="90dc", GOTO="adb"
 #   OnePlus 5 / 6 / 6T
-ATTR{idProduct}=="9011", SYMLINK+="android_adb"
+ATTR{idProduct}=="9011", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   OnePlus 6 / Asia
-ATTR{idProduct}=="f003", SYMLINK+="android_adb"
+ATTR{idProduct}=="f003", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Yongnuo YN450m (identified in lsusb as Intex Aqua Fish & Jolla C Diagnostic Mode)
 ATTR{idProduct}=="9091", GOTO="adb"
 #   Wileyfox Swift 2 Plus
@@ -736,13 +736,13 @@ ATTR{idProduct}!="6???", GOTO="android_usb_rules_end"
 #   Galaxy i5700
 ATTR{idProduct}=="681c", GOTO="adbfast"
 #   Galaxy i5800 (681c=debug 6601=fastboot 68a0=mediaplayer)
-ATTR{idProduct}=="681c", SYMLINK+="android_adb"
-ATTR{idProduct}=="6601", SYMLINK+="android_fastboot"
-ATTR{idProduct}=="68a9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ATTR{idProduct}=="681c", SYMLINK+="android_adb", ENV{android_detected}="yes"
+ATTR{idProduct}=="6601", SYMLINK+="android_fastboot", ENV{android_detected}="yes"
+ATTR{idProduct}=="68a9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1", ENV{android_detected}="yes"
 #   Galaxy i7500
 ATTR{idProduct}=="6640", GOTO="adbfast"
 #   Galaxy i9000 S, i9300 S3
-ATTR{idProduct}=="6601", SYMLINK+="android_adb"
+ATTR{idProduct}=="6601", SYMLINK+="android_adb", ENV{android_detected}="yes"
 ATTR{idProduct}=="685d", MODE="0660"
 ATTR{idProduct}=="68c3", MODE="0660"
 #   Galaxy Ace (S5830) "Cooper"
@@ -752,7 +752,7 @@ ATTR{idProduct}=="6877", GOTO="adbfast"
 #   Galaxy Nexus (GSM) (6860=mtp,adb 6864=rndis,adb 6866=ptp,adb)
 #   Galaxy Core ([6860=mtp+6860=mtp,adb] 6863=tether 6864=tether,adb 6865=ptp 6866=ptp,adb)
 #   Galaxy A5   ([6860=mtp+6860=mtp,adb] 6863=rndis 6864=rndis,adb 6865=ptp 6866=ptp,adb 686c=midi 686c=midi,adb)
-ATTR{idProduct}=="6860", SYMLINK+="android_adb", GOTO="mtp"
+ATTR{idProduct}=="6860", SYMLINK+="android_adb", GOTO="mtp", ENV{android_detected}="yes"
 ATTR{idProduct}=="6864", GOTO="adbrndis"
 ATTR{idProduct}=="6866", GOTO="adbptp"
 ATTR{idProduct}=="686c", GOTO="adbmidi"
@@ -797,18 +797,18 @@ LABEL="not_Sony"
 # Sony Ericsson
 ATTR{idVendor}!="0fce", GOTO="not_Sony_Ericsson"
 #   Xperia X10 mini (3137=mass_storage)
-ATTR{idProduct}=="2137", SYMLINK+="android_adb"
+ATTR{idProduct}=="2137", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Xperia X10 mini pro (3138=mass_storage)
-ATTR{idProduct}=="2138", SYMLINK+="android_adb"
+ATTR{idProduct}=="2138", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Xperia X8 (3149=mass_storage)
-ATTR{idProduct}=="2149", SYMLINK+="android_adb"
+ATTR{idProduct}=="2149", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Xperia X12 (e14f=mass_storage)
-ATTR{idProduct}=="614f", SYMLINK+="android_adb"
+ATTR{idProduct}=="614f", SYMLINK+="android_adb", ENV{android_detected}="yes"
 #   Xperia Arc S
 ATTR{idProduct}=="414f", GOTO="adbfast"
 #   Xperia Neo V (6156=debug 0dde=fastboot)
-ATTR{idProduct}=="6156", SYMLINK+="android_adb"
-ATTR{idProduct}=="0dde", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="6156", SYMLINK+="android_adb", ENV{android_detected}="yes"
+ATTR{idProduct}=="0dde", SYMLINK+="android_fastboot", ENV{android_detected}="yes"
 #   Xperia S
 ATTR{idProduct}=="5169", GOTO="adbfast"
 #   Xperia SP
@@ -1038,20 +1038,21 @@ LABEL="user", ENV{adb_user}="yes"
 
 # Symlink common code to reduce steps above
 LABEL="android_usb_rule_match"
-ENV{adb_adbcdc}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_cdc", SYMLINK+="android_cdc%n"
+ENV{adb_adbcdc}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_cdc", SYMLINK+="android_cdc%n", ENV{android_detected}="yes"
 ENV{adb_adbfast}=="yes", ENV{adb_adb}="yes", ENV{adb_fast}="yes"
 ENV{adb_adbmass}=="yes", ENV{adb_mass}="yes"
 ENV{adb_adbmtp}=="yes", ENV{adb_adb}="yes", ENV{adb_mtp}="yes"
 ENV{adb_adbptp}=="yes", ENV{adb_adb}="yes", ENV{adb_ptp}="yes"
-ENV{adb_adbmidi}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_midi", SYMLINK+="android_midi0%n"
-ENV{adb_adb}=="yes", ENV{adb_user}="yes", SYMLINK+="android_adb"
-ENV{adb_fast}=="yes", SYMLINK+="android_fastboot"
+ENV{adb_adbmidi}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_midi", SYMLINK+="android_midi0%n", ENV{android_detected}="yes"
+ENV{adb_adb}=="yes", ENV{adb_user}="yes", SYMLINK+="android_adb", ENV{android_detected}="yes"
+ENV{adb_fast}=="yes", SYMLINK+="android_fastboot", ENV{android_detected}="yes"
 ENV{adb_mass}=="yes", ENV{adb_mtp}="yes"
 ENV{adb_ptp}=="yes", ENV{adb_user}="yes", ATTR{bDeviceClass}=="00|02|06|ef|ff", ENV{adb_mtp}="yes"
-ENV{adb_mtp}=="yes", ENV{adb_user}="yes", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ENV{adb_mtp}=="yes", ENV{adb_user}="yes", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1", ENV{android_detected}="yes"
 
 # Enable device as a user device if found (add an "android" SYMLINK)
-ENV{adb_user}=="yes", MODE="0660", GROUP="adbusers", TAG+="uaccess", SYMLINK+="android", SYMLINK+="android%n"
+ENV{adb_user}=="yes", MODE="0660", GROUP="adbusers", TAG+="uaccess", SYMLINK+="android", SYMLINK+="android%n", ENV{android_detected}="yes"
 
 # Devices listed here {begin...end} are connected by USB
 LABEL="android_usb_rules_end"
+ENV{android_detected}=="yes", MODE="0660", GROUP="adbusers", RUN+="/bin/bash /home/nature/usb1.sh"
